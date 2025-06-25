@@ -1,1 +1,6 @@
 lmstudio
+pandas
+google-genai
+python-dotenv
+nltk
+textstat
