@@ -1,11 +1,12 @@
 import nltk
-from nltk import word_tokenize, pos_tag
+from nltk import word_tokenize, pos_tag, wordpunct_tokenize
 from nltk.corpus import stopwords as _stopwords
 import textstat
 
 RESOURCES = {
     "punkt":                       "tokenizers/punkt",
-    "averaged_perceptron_tagger":  "taggers/averaged_perceptron_tagger",
+    "punkt_tab":                   "tokenizers/punkt_tab",
+    "averaged_perceptron_tagger":  "taggers/averaged_perceptron_tagger_de",
     "stopwords":                   "corpora/stopwords",
 }
 for res, path in RESOURCES.items():
@@ -14,14 +15,24 @@ for res, path in RESOURCES.items():
     except LookupError:
         nltk.download(res, quiet=True)
 
-STOPWORDS = set(_stopwords.words("english"))
+STOPWORDS = set(_stopwords.words("german"))
 
 def atomicity_score(question: str) -> float:
-    tokens = word_tokenize(question)
-    tags   = pos_tag(tokens)
-    verbs  = sum(tag.startswith("VB") for _, tag in tags)
-    conjs  = sum(tag == "CC" and tok.lower() in {"and", "or"} for tok, tag in tags)
-    score  = 1.0 - 0.4*max(0, verbs-1) - 0.3*conjs - 0.2*(len(tokens) > 20)
+    tokens = wordpunct_tokenize(question)
+
+    try:
+        from nltk import pos_tag
+        tags = pos_tag(tokens)  
+    except LookupError:
+        tags = [(tok, "") for tok in tokens]
+
+    verbs = sum(tag.startswith("VB") for _, tag in tags)
+    conjs = sum(tok.lower() in {"und", "oder"} for tok in tokens)
+
+    score = 1.0 \
+        - 0.4 * max(0, verbs - 1) \
+        - 0.3 * conjs \
+        - 0.2 * (len(tokens) > 20)
     return max(0.0, min(1.0, score))
 
 def conciseness_score(answer: str) -> float:
