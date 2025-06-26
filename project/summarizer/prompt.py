@@ -29,7 +29,7 @@ system_prompt_de = """
 4. **Atomarität:** ein Kernthema pro Karte - vermeide überladene Karten. Ausnahmen gibt es bei Themen, die ineinander greifen.
 5. **Gewährung des Zusammenhangs:** Der Zusammenhang der Themen sollte nicht verloren gehen. Unverbundenes Detailwissen sollte vermieden werden.
 6. **Wiedererkennungswert:** Die Frage muss als klarer Trigger funktionieren: Sie sollte helfen, eine spezifische Erinnerung zu aktivieren.
-7.  **Format:** Gib jede Lernkarte im folgenden Format aus.
+7.  **Format:** Gib jede Lernkarte im folgenden Format aus. 
 
     {
         "question": "...",
@@ -66,7 +66,7 @@ system_prompt_de = """
     
 
 **Dein Auftrag:**
-Analysiere nun den folgenden Text und erstelle eine Lernkarte pro Kernthema gemäß den oben genannten Prinzipien und Beispielen. 
+Analysiere nun den folgenden Text und erstelle maximal 10 Lernkarten mit den wichtigsten Inhalten gemäß den oben genannten Prinzipien und Beispielen.
 """
 
 prompts = {
