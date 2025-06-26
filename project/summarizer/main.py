@@ -16,7 +16,7 @@ load_dotenv()
 API_key = os.getenv('API_KEY')
 client = genai.Client(api_key= API_key)
 
-with open('summaries/esop.md') as f:
+with open('summaries/esop.md', encoding='utf-8') as f:
     prompt = f.read()
 
 with open('prompts.json', 'r') as f:

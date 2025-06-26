@@ -1,0 +1,42 @@
+[
+    {
+        "question": "Was ist ein Array in Java?",
+        "answer": "Ein Array ist eine Datenstruktur, die eine feste Anzahl von Werten desselben Datentyps speichert."
+    },
+    {
+        "question": "Wie greift man auf ein Element eines eindimensionalen Arrays zu?",
+        "answer": "Mit dem Index in eckigen Klammern, z. B. a[0] für das erste Element (Index beginnt bei 0)."
+    },
+    {
+        "question": "Was passiert, wenn man in einem Array auf einen ungültigen Index zugreift?",
+        "answer": "Es tritt eine IndexOutOfBoundsException auf."
+    },
+    {
+        "question": "Was ist ein zweidimensionales Array?",
+        "answer": "Ein 2D-Array ist ein Array von Arrays, z. B. eine Tabelle mit Zeilen und Spalten."
+    },
+    {
+        "question": "Wie unterscheiden sich Instanz- und Klassenvariablen in Java?",
+        "answer": "Instanzvariablen gehören zu Objekten, Klassenvariablen (static) gehören zur Klasse und existieren nur einmal."
+    },
+    {
+        "question": "Was bedeutet Call-by-Value bei Objekten in Java?",
+        "answer": "Die Referenz auf das Objekt wird kopiert; Änderungen betreffen das Originalobjekt."
+    },
+    {
+        "question": "Was ist der Vorteil generischer Typen in Java?",
+        "answer": "Sie ermöglichen typsichere Container ohne Casts, wodurch Laufzeitfehler vermieden werden."
+    },
+    {
+        "question": "Wie funktioniert die Datei-Kopie mit Byte-Streams?",
+        "answer": "Mit FileInputStream und FileOutputStream wird byteweise gelesen und geschrieben."
+    },
+    {
+        "question": "Was bewirkt Pufferung bei Ein-/Ausgabe?",
+        "answer": "Sie reduziert direkte Gerätezugriffe und verbessert so die Performance."
+    },
+    {
+        "question": "Was ist notwendig, damit ein Objekt serialisiert werden kann?",
+        "answer": "Die Klasse muss das Interface Serializable implementieren."
+    }
+]
