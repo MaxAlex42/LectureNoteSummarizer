@@ -9,6 +9,9 @@ from evaluation import (
     conciseness_score,
     leakage_score,
     fk_grade,
+    find_exact_and_question_duplicates,
+    find_semantic_question_duplicates,
+    compute_max_semantic_similarity
 )
 
 load_dotenv()
@@ -58,8 +61,18 @@ df_cards["leakage_score"] = df_cards.apply(
 )
 df_cards["fk_grade"]   = df_cards["answer"].apply(fk_grade)
 
-print(
-    df_cards[
-        ["question", "answer", "atomicity_score", "conciseness_score", "leakage_score", "fk_grade"]
-    ]
-)
+exact_dups, question_dups = find_exact_and_question_duplicates(df_cards)
+df_cards["is_exact_dup"]      = df_cards.index.isin(exact_dups)
+max_sims = compute_max_semantic_similarity(df_cards, model_name="all-MiniLM-L6-v2")
+df_cards["semantic_similarity"] = df_cards.index.map(max_sims)
+
+threshold = 0.90
+df_cards["is_semantic_dup"] = df_cards["semantic_similarity"] >= threshold    
+
+print(df_cards[[
+    "question", "answer",
+    "atomicity_score", "conciseness_score",
+    "leakage_score", "fk_grade",
+    "semantic_similarity",
+    "is_exact_dup"
+]])

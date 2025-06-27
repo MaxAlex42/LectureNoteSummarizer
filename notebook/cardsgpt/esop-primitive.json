@@ -1,0 +1,78 @@
+[
+  {
+    "question": "Was ist ein Array in Java?",
+    "answer": "Ein Array ist eine Datenstruktur, die eine feste Anzahl von Werten desselben Datentyps in einer geordneten Folge speichert."
+  },
+  {
+    "question": "Wie deklariert und instanziiert man ein eindimensionales Array von 10 Integern?",
+    "answer": "int[] a; a = new int[10];"
+  },
+  {
+    "question": "Wie greift man auf das erste Element eines Arrays a zu und welcher Indexbereich ist gültig?",
+    "answer": "a[0] gibt das erste Element; gültige Indizes sind 0 bis a.length − 1."
+  },
+  {
+    "question": "Wie initialisiert man ein Array bei der Deklaration mit Werten 2, 3, 5, 7, 11?",
+    "answer": "int[] fivePrimes = {2, 3, 5, 7, 11};"
+  },
+  {
+    "question": "Wie deklariert man ein zweidimensionales Array mit 3 Zeilen und 4 Spalten und was geben a.length und a[0].length zurück?",
+    "answer": "int[][] a = new int[3][4]; a.length ist 3 (Zeilen), a[0].length ist 4 (Spalten)."
+  },
+  {
+    "question": "Was bedeutet es, dass Arrays Referenztypen sind, und was passiert bei int[] b = a?",
+    "answer": "Die Variable speichert eine Adresse; b = a lässt b und a auf dasselbe Array zeigen, Änderungen über b gelten für a."
+  },
+  {
+    "question": "Wie iteriert man klassisch und mit dem Enhanced for-Loop über ein Array a?",
+    "answer": "Klassisch: for (int i = 0; i < a.length; i++) { … } ; Enhanced: for (int val : a) { … }"
+  },
+  {
+    "question": "Was ist der Unterschied zwischen Klasse und Objekt in Java?",
+    "answer": "Eine Klasse definiert Aufbau und Verhalten (Attribute & Methoden); ein Objekt ist eine Instanz dieser Klasse, erzeugt mit new."
+  },
+  {
+    "question": "Warum sind Instanzvariablen oft private und Methoden public?",
+    "answer": "Private Instanzvariablen schützen interne Daten (Datenkapselung), public-Methoden bieten kontrollierten Zugriff (Sichtbare Operationen)."
+  },
+  {
+    "question": "Was versteht man unter Konstruktorüberladung?",
+    "answer": "Mehrere Konstruktoren mit unterschiedlicher Parameterliste in einer Klasse, um Objekte verschieden zu initialisieren."
+  },
+  {
+    "question": "Was ist der Unterschied zwischen Instanz- und Klassenmitgliedern (static)?",
+    "answer": "Instanzmitglieder gehören einzelnen Objekten (this vorhanden), static-Mitglieder gehören der Klasse insgesamt (kein this)."
+  },
+  {
+    "question": "Wie funktioniert die Parameterübergabe in Java für primitive Typen und Objektverweise?",
+    "answer": "Bei primitiven Typen wird der Wert kopiert (call by value); bei Objektverweisen wird die Referenz kopiert, Änderungen am Objekt bleiben erhalten."
+  },
+  {
+    "question": "Welches Problem lösen generische Typen (Generics)?",
+    "answer": "Sie erlauben typsichere, homogene Container ohne Casts, wodurch ClassCastException zur Compile-Time-Fehler wird."
+  },
+  {
+    "question": "Wie deklariert man eine generische Klasse oder ein Interface mit Typparameter E?",
+    "answer": "interface IStack<E> { void push(E e); E pop(); … }  oder class DynStack<E> implements IStack<E> { … }"
+  },
+  {
+    "question": "Nenne zwei Vorteile von Generics.",
+    "answer": "1. Keine expliziten Casts nötig; 2. Fehler werden schon beim Kompilieren erkannt."
+  },
+  {
+    "question": "Was ist ein Stream in Java?",
+    "answer": "Ein Stream ist eine Abstraktion für eine Datenquelle oder -senke, z. B. zum Lesen (InputStream) oder Schreiben (OutputStream)."
+  },
+  {
+    "question": "Worin unterscheidet sich ein Byte-Stream von einem Character-Stream?",
+    "answer": "Byte-Streams (InputStream/OutputStream) übertragen rohe 8-Bit-Daten; Character-Streams (Reader/Writer) übertragen Text und konvertieren Zeichensätze."
+  },
+  {
+    "question": "Wozu dienen gepufferte Streams (z. B. BufferedReader)?",
+    "answer": "Sie reduzieren teure Gerätezugriffe durch Zwischenspeicherung und erhöhen so die I/O-Performance."
+  },
+  {
+    "question": "Wie serialisiert und deserialisiert man ein Objekt in Java?",
+    "answer": "Mit ObjectOutputStream.writeObject(obj) und ObjectInputStream.readObject(); Klasse muss Serializable implementieren."
+  }
+]
